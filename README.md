@@ -56,6 +56,7 @@ src/
 ├── store/         # Zustand global state yönetimi
 ├── Interfaces/    # Veri şemaları ve mock datalar (Standardize veri yapısı)
 └── hooks/         # Özel React hookları (useDebounce vb.)
+```
 
 🛠️ Kurulum ve Çalıştırma
 1. Projeyi klonlayın:
