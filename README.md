@@ -60,17 +60,22 @@ src/
 
 🛠️ Kurulum ve Çalıştırma
 1. Projeyi klonlayın:
-
+```bash
 git clone https://github.com/furkan-altin/pixel-log.git
-
+```
 2. Bağımlılıkları yükleyin:
-
+```bash
 npm install
-
+```
 3. .env dosyası oluşturun ve RAWG API anahtarınızı ekleyin:
-
+```bash
 VITE_RAWG_API_KEY=senin_api_anahtarin
-
+```
 4. Projeyi başlatın:
-
+```bash
 npm run dev
+```
+
+Geliştirici: Furkan Altın - Bu proje bir staj ve yetkinlik değerlendirme projesi olarak tasarlanmıştır.
+
+
