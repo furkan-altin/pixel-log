@@ -2,7 +2,7 @@
 
 Pixerlog, oyuncular için geliştirilmiş, modern web teknolojilerini (React, Zustand, Tailwind) ve oyun dünyasının estetiğini (Opera GX style) bir araya getiren yeni nesil bir oyun takip ve kütüphane yönetim platformudur.
 
-> **Canlı Demo:** (https://pixel-log.netlify.app)
+> **Canlı Demo:** [(https://pixel-log.netlify.app)](https://pixel-log.netlify.app/?)
 
 ---
 
