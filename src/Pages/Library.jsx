@@ -18,6 +18,20 @@ import {
 } from '@dnd-kit/core';
 import { CSS } from '@dnd-kit/utilities';
 
+// LibraryCard.jsx içinde duruma göre buton ekleme
+<div className="mobile-actions md:hidden"> 
+  <select 
+    value={game.status} 
+    onChange={(e) => updateGameStatus(game.id, e.target.value)}
+    className="bg-gray-800 text-white text-xs p-1 rounded border border-purple-500"
+  >
+    <option value="playing">Oynuyorum</option>
+    <option value="completed">Bitti</option>
+    <option value="dropped">Bıraktım</option>
+    <option value="backlog">Sırada</option>
+  </select>
+</div>
+
 // ==========================================
 // 1. SÜRÜKLENEBİLİR KART BİLEŞENİ
 // ==========================================
@@ -49,7 +63,7 @@ const DraggableGameCard = ({ game, onClick, onRemove, onRate, t }) => {
         <div>
           <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-2 line-clamp-2 leading-tight pointer-events-none">{game.title}</h3>
           
-          {/* YILDIZLAR (Tıklamaların sürüklemeyi tetiklememesi için onPointerDown durdurulur) */}
+          {/* YILDIZLAR  */}
           <div className="flex items-center gap-1 mb-4" onPointerDown={(e) => e.stopPropagation()}>
             {[1, 2, 3, 4, 5].map((star) => (
               <button 
@@ -63,7 +77,7 @@ const DraggableGameCard = ({ game, onClick, onRemove, onRate, t }) => {
           </div>
         </div>
         
-        {/* BUTONLAR (onPointerDown durdurulur) */}
+        {/* BUTONLAR  */}
         <div className="flex gap-2" onPointerDown={(e) => e.stopPropagation()}>
             <button onClick={(e) => { e.stopPropagation(); onClick(); }} className="flex-1 bg-blue-500/10 hover:bg-blue-500 text-blue-600 dark:text-blue-400 hover:text-white text-xs font-bold py-2 rounded-xl transition-all">
               Detaylar
