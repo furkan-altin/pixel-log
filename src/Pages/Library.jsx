@@ -18,17 +18,18 @@ import {
 } from '@dnd-kit/core';
 import { CSS } from '@dnd-kit/utilities';
 
-// LibraryCard.jsx içinde duruma göre buton ekleme
-<div className="mobile-actions md:hidden"> 
+{/* md:hidden sayesinde sadece mobilde görünür */}
+<div className="md:hidden mt-2 border-t border-gray-700 pt-2">
+  <label className="text-[10px] text-gray-400 uppercase tracking-widest">Durum Değiştir</label>
   <select 
     value={game.status} 
     onChange={(e) => updateGameStatus(game.id, e.target.value)}
-    className="bg-gray-800 text-white text-xs p-1 rounded border border-purple-500"
+    className="w-full bg-black/50 text-purple-400 text-xs py-1 px-2 rounded border border-purple-500/30 focus:outline-none focus:border-purple-500"
   >
-    <option value="playing">Oynuyorum</option>
-    <option value="completed">Bitti</option>
-    <option value="dropped">Bıraktım</option>
-    <option value="backlog">Sırada</option>
+    <option value="playing">🕹️ Oynuyorum</option>
+    <option value="completed">🏆 Bitti</option>
+    <option value="dropped">🛑 Bıraktım</option>
+    <option value="backlog">⏳ Sırada</option>
   </select>
 </div>
 

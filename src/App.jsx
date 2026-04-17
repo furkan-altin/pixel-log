@@ -26,7 +26,7 @@ const SplashScreen = () => (
       initial={{ scale: 0.5, opacity: 0 }}
       animate={{ scale: [0.5, 1.2, 1], opacity: 1 }}
       transition={{ duration: 1, times: [0, 0.6, 1], ease: "anticipate" }}
-      // YENİ: Gölge artık CSS değişkeninden (seçili temadan) besleniyor
+      // Gölge artık CSS değişkeninden (seçili temadan) besleniyor
       className="relative z-10 w-24 h-24 bg-yellow-500 rounded-[2rem] flex items-center justify-center shadow-[0_0_50px_rgb(var(--color-accent)/0.5)]"
     >
       <span className="text-black font-black text-6xl leading-none">P</span>
@@ -46,7 +46,7 @@ const SplashScreen = () => (
           initial={{ left: "-100%" }}
           animate={{ left: "100%" }}
           transition={{ repeat: Infinity, duration: 1.5, ease: "linear" }}
-          // YENİ: Kayan çubuğun gölgesi temaya bağlandı
+          // Kayan çubuğun gölgesi temaya bağlandı
           className="absolute inset-y-0 w-24 bg-yellow-500 shadow-[0_0_15px_rgb(var(--color-accent))]"
         />
       </div>
@@ -93,7 +93,7 @@ function App() {
   const [mousePos, setMousePos] = useState({ x: -1000, y: -1000 });
   const [isLoading, setIsLoading] = useState(true);
 
-  // YENİ VE DÜZELTİLMİŞ: Sonsuz döngüyü kıracak useEffect ayarı
+  // Sonsuz döngüyü kıracak useEffect ayarı
   useEffect(() => {
     initTheme();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -142,16 +142,16 @@ function App() {
 
       <div className="relative min-h-screen w-full bg-[#f0f0f5] dark:bg-[#0a0a0a] text-gray-900 dark:text-gray-100 font-sans transition-colors duration-500 overflow-x-hidden">
         
-        {/* CYBERPUNK AURA (Fare İmleci Parlaması) - ARTIK TEMAYA DUYARLI */}
+        {/* CYBERPUNK AURA (Fare İmleci Parlaması) - TEMAYA DUYARLI */}
         <div 
-          className="pointer-events-none fixed inset-0 z-0 transition-opacity duration-300"
-          style={{
+          className="hidden md:block pointer-events-none fixed inset-0 z-0 transition-opacity duration-300"
+           style={{
             background: darkMode 
-              ? `radial-gradient(1000px circle at ${mousePos.x}px ${mousePos.y}px, rgb(var(--color-accent) / 0.45) 0%, rgb(var(--color-accent) / 0.15) 30%, transparent 60%)`
-              : `radial-gradient(900px circle at ${mousePos.x}px ${mousePos.y}px, rgb(var(--color-accent) / 1) 0%, rgb(var(--color-accent) / 0.5) 20%, rgb(var(--color-accent) / 0.15) 50%, transparent 80%)`,
-              mixBlendMode: darkMode ? 'normal' : 'multiply'
-          }}
-        />
+            ? `radial-gradient(1000px circle at ${mousePos.x}px ${mousePos.y}px, rgb(var(--color-accent) / 0.45) 0%, rgb(var(--color-accent) / 0.15) 30%, transparent 60%)`
+            : `radial-gradient(900px circle at ${mousePos.x}px ${mousePos.y}px, rgb(var(--color-accent) / 1) 0%, rgb(var(--color-accent) / 0.5) 20%, rgb(var(--color-accent) / 0.15) 50%, transparent 80%)`,
+             mixBlendMode: darkMode ? 'normal' : 'multiply'
+           }}
+          />
 
         <Toaster 
           position="bottom-right" 
